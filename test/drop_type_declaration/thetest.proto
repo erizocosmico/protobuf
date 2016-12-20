@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package droptypedeclaration;
+
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+
+message Dropped {
+    option (gogoproto.drop_type_declaration) = true;
+    string name = 1;
+    int32 age = 2;
+}
+
+message Kept {
+    string name = 1;
+    int32 age = 2;
+}
