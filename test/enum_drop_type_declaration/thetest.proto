@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package enumdroptypedeclaration;
+
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+
+enum MyEnum {
+    option (gogoproto.enum_drop_type_declaration) = true;
+    option (gogoproto.goproto_enum_prefix) = false;
+    A = 0;
+    B = 1;
+}
+
+message Message {
+    MyEnum enumerated_field = 1;
+}
